@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +42,10 @@
 				<div class="card">
 					<div class="card-header text-center">
 						<h3>Add Emp</h3>
+						<c:if test="${ not empty msg}">
+							<h5>${msg}</h5>
+							<c:remove var="msg"/>
+						</c:if>
 					</div>
 					<div class="card-body">
 						<form action="createEmp" method="post">

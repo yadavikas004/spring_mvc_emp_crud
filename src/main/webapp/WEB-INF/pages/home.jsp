@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,47 @@
 			</div>
 		</div>
 	</nav>
-	<h1>HOME JSP PAGE</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>All Emp Details</h4>
+					</div>
+					<div class="card-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Id</th>
+									<th scope="col">Full Name</th>
+									<th scope="col">Address</th>
+									<th scope="col">Email</th>
+									<th scope="col">Password</th>
+									<th scope="col">Designation</th>
+									<th scope="col">Salary</th>
+									<th scope="col">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${empList}" var="emp">
+									<tr>
+										<th scope="row">${emp.id}</th>
+										<td>${emp.fullName}</td>
+										<td>${emp.address}</td>
+										<td>${emp.email}</td>
+										<td>${emp.password}</td>
+										<td>${emp.designation}</td>
+										<td>${emp.salary}</td>
+										<td><a href="#" class="btn btn-sm btn-primary">Edit</a> <a
+											href="#" class="btn btn-sm btn-danger">Delete</a></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
