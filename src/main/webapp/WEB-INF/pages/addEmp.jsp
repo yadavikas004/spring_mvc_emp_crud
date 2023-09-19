@@ -26,8 +26,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="home">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="addEmp">Add
+						aria-current="page" href="${pageContext.request.contextPath}/home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/addEmp">Add
 							Emp</a></li>
 
 				</ul>
@@ -43,7 +43,7 @@
 					<div class="card-header text-center">
 						<h3>Add Emp</h3>
 						<c:if test="${ not empty msg}">
-							<h5>${msg}</h5>
+							<h5 class="text-success">${msg}</h5>
 							<c:remove var="msg"/>
 						</c:if>
 					</div>

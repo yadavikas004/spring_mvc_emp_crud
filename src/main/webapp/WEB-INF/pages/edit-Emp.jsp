@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page isELIgnored="false"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>home</title>
+<title>Add Employee</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -35,48 +35,47 @@
 			</div>
 		</div>
 	</nav>
+
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6 offset-md-3">
 				<div class="card">
-					<div class="card-header">
-						<h4>All Emp Details</h4>
+					<div class="card-header text-center">
+						<h3>Edit Emp</h3>
 						<c:if test="${ not empty msg}">
 							<h5 class="text-success">${msg}</h5>
-							<c:remove var="msg" />
+							<c:remove var="msg"/>
 						</c:if>
 					</div>
 					<div class="card-body">
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">Id</th>
-									<th scope="col">Full Name</th>
-									<th scope="col">Address</th>
-									<th scope="col">Email</th>
-									<th scope="col">Password</th>
-									<th scope="col">Designation</th>
-									<th scope="col">Salary</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${empList}" var="emp">
-									<tr>
-										<th scope="row">${emp.id}</th>
-										<td>${emp.fullName}</td>
-										<td>${emp.address}</td>
-										<td>${emp.email}</td>
-										<td>${emp.password}</td>
-										<td>${emp.designation}</td>
-										<td>${emp.salary}</td>
-										<td><a href="editEmp/${emp.id}"
-											class="btn btn-sm btn-primary">Edit</a> <a
-											href="deleteEmp/${emp.id}" class="btn btn-sm btn-danger">Delete</a></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+						<form action="${pageContext.request.contextPath}/updateEmp" method="post">
+						<input type="hidden" name="id" value="${emp.id}">
+							<div class="mb-3">
+								<label>Enter Full Name</label> <input type="text"
+									name="fullName" class="form-control" value="${emp.fullName}">
+							</div>
+							<div class="mb-3">
+								<label>Address</label> <input type="text" name="address"
+									class="form-control" value="${emp.address}">
+							</div>
+							<div class="mb-3">
+								<label>Enter Email</label> <input type="text" name="email"
+									class="form-control" value="${emp.email}">
+							</div>
+							<div class="mb-3">
+								<label>Enter Password</label> <input type="text" name="password"
+									class="form-control" value="${emp.password}">
+							</div>
+							<div class="mb-3">
+								<label>Enter Designation</label> <input type="text"
+									name="designation" class="form-control" value="${emp.designation}">
+							</div>
+							<div class="mb-3">
+								<label>Enter Salary</label> <input type="text" name="salary"
+									class="form-control" value="${emp.salary}">
+							</div>
+							<button class="btn btn-primary center">Update</button>
+						</form>
 					</div>
 				</div>
 			</div>
