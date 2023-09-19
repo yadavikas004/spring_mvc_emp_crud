@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header text-center">
 						<h4>All Emp Details</h4>
 						<c:if test="${ not empty msg}">
 							<h5 class="text-success">${msg}</h5>
