@@ -62,7 +62,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
+			<version>8.0.16</version> <!-- Use the version that matches your 5.1.46
+			MySQL server version -->
 		</dependency>
 
 

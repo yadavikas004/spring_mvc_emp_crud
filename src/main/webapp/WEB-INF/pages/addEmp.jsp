@@ -46,7 +46,7 @@
 						<form action="createEmp" method="post">
 							<div class="mb-3">
 								<label>Enter Full Name</label> <input type="text"
-									name="fullname" class="form-control">
+									name="fullName" class="form-control">
 							</div>
 							<div class="mb-3">
 								<label>Address</label> <input type="text" name="address"
